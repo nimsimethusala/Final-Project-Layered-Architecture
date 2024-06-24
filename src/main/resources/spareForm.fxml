@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="SpareRoot" prefHeight="655.0" prefWidth="846.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.controller.SpareFormController">
+   <children>
+      <Text fill="CORAL" layoutX="191.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SPARE FORM">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtName" layoutX="459.0" layoutY="159.0" prefHeight="26.0" prefWidth="262.0" promptText="Name" />
+      <TextField fx:id="txtCount" layoutX="123.0" layoutY="225.0" prefHeight="26.0" prefWidth="262.0" promptText="Spare Count" />
+      <Text fill="WHITE" layoutX="124.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spare ID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="459.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spare Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="122.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spare Count">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblSpare" layoutX="25.0" layoutY="413.0" prefHeight="228.0" prefWidth="790.0">
+        <columns>
+          <TableColumn fx:id="colSpareId" prefWidth="141.60000228881836" text="Spare_id" />
+          <TableColumn fx:id="colName" prefWidth="284.8000030517578" text="Name" />
+            <TableColumn fx:id="colCount" prefWidth="167.199951171875" text="Count" />
+            <TableColumn fx:id="colPrice" prefWidth="196.7999267578125" text="Price" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="89.0" layoutY="343.0" onAction="#btnSaveOnAction" prefHeight="48.0" prefWidth="114.0" stylesheets="@../Style/Css.css" text="Save">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="284.0" layoutY="343.0" onAction="#btnUpdateOnAction" prefHeight="48.0" prefWidth="113.0" stylesheets="@../Style/Css.css" text="Update">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="468.0" layoutY="343.0" onAction="#btnDeleteOnAction" prefHeight="46.0" prefWidth="114.0" stylesheets="@../Style/Css.css" text="Delete">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="646.0" layoutY="343.0" onAction="#btnClearOnAction" prefHeight="46.0" prefWidth="114.0" stylesheets="@../Style/Css.css" text="Clear">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="65.0" fitWidth="66.0" layoutX="109.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Screenshot 2024-04-11 141807.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearch" layoutX="438.0" layoutY="61.0" onAction="#txtSearchOnAction" prefHeight="26.0" prefWidth="342.0" promptText="Search" />
+      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="754.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/344c4b83bc1f6d1ec006569fc2dc60d0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="31.0" layoutY="23.0" onMouseClicked="#imgBackOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/back button.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtPrice" layoutX="459.0" layoutY="225.0" prefHeight="26.0" prefWidth="262.0" promptText="Price" />
+      <Text fill="WHITE" layoutX="458.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spare Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblSpareId" layoutX="122.0" layoutY="158.0" prefHeight="26.0" prefWidth="262.0" style="-fx-background-color: #FFFFFF;" />
+      <Text fill="WHITE" layoutX="289.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbSupplierId" layoutX="289.0" layoutY="292.0" prefHeight="26.0" prefWidth="262.0" style="-fx-background-color: #FFFFFF;" unFocusColor="BLACK" />
+   </children>
+</AnchorPane>

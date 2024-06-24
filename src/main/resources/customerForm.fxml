@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="CustomerRoot" prefHeight="655.0" prefWidth="846.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.Ijse.controller.CustomerFormController">
+   <children>
+      <Text fill="CORAL" layoutX="138.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER FORM">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCustomerNumber" layoutX="83.0" layoutY="256.0" onKeyReleased="#txtNumberOnAction" prefHeight="30.0" prefWidth="234.0" promptText="Contact Number" />
+      <TextField fx:id="txtCustomerName" layoutX="509.0" layoutY="178.0" onKeyReleased="#txtCustomerNameOnAction" prefHeight="30.0" prefWidth="234.0" promptText="Customer Name" />
+      <TextField fx:id="txtAddress" layoutX="509.0" layoutY="259.0" prefHeight="30.0" prefWidth="234.0" promptText="Addresss" />
+      <Button layoutX="283.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" stylesheets="@../Style/Css.css" text="Update">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="466.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="106.0" stylesheets="@../Style/Css.css" text="Delete">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="86.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="106.0" stylesheets="@../Style/Css.css" text="Save">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="658.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="38.0" prefWidth="106.0" stylesheets="@../Style/Css.css" text="Clear">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblCustomer" layoutX="65.0" layoutY="397.0" prefHeight="230.0" prefWidth="715.0">
+        <columns>
+          <TableColumn fx:id="colCustomerId" prefWidth="111.99996948242188" text="Customer_id" />
+          <TableColumn fx:id="colCustomerName" prefWidth="210.4001007080078" text="Name" />
+            <TableColumn fx:id="colContact" prefWidth="191.199951171875" text="Contact" />
+            <TableColumn fx:id="colAddress" prefWidth="201.5999755859375" text="Address" />
+        </columns>
+      </TableView>
+      <Text layoutX="83.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="423.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="54.0" fitWidth="49.0" layoutX="82.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Screenshot 2024-04-11 130208.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="83.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="509.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="82.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Number">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="509.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Address">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtSearch" layoutX="486.0" layoutY="64.0" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="298.0" promptText="Search" />
+      <ImageView fitHeight="26.0" fitWidth="30.0" layoutX="749.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/344c4b83bc1f6d1ec006569fc2dc60d0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="25.0" layoutY="20.0" onDragDetected="#imgBackOnAction" onMouseClicked="#imgBackOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/back button.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblCustomerId" layoutX="83.0" layoutY="175.0" prefHeight="30.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;" />
+   </children>
+</AnchorPane>

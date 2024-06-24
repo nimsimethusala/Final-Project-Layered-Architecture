@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Job_Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a5c2b92-a900-4131-97b7-d10c43ac28bd">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<subDataset name="Job Data" uuid="b61cf9b3-3835-4094-821d-d45584a2cd42">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  quickmecengineers.job]]>
+		</queryString>
+		<field name="job_No" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="job_No"/>
+			<property name="com.jaspersoft.studio.field.label" value="job_No"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Model" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Model"/>
+			<property name="com.jaspersoft.studio.field.label" value="Model"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Date" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="Date"/>
+			<property name="com.jaspersoft.studio.field.label" value="Date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="customer_id" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="customer_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="item_count" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="item_count"/>
+			<property name="com.jaspersoft.studio.field.label" value="item_count"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="defect_id" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="defect_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="defect_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="defect_Name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="defect_Name"/>
+			<property name="com.jaspersoft.studio.field.label" value="defect_Name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Spare_id" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Spare_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="Spare_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Spare_Name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Spare_Name"/>
+			<property name="com.jaspersoft.studio.field.label" value="Spare_Name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Spare_count" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Spare_count"/>
+			<property name="com.jaspersoft.studio.field.label" value="Spare_count"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Emp_id" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Emp_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="Emp_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Emp_Name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Emp_Name"/>
+			<property name="com.jaspersoft.studio.field.label" value="Emp_Name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<group name="job_No">
+			<groupExpression><![CDATA[$F{job_No}]]></groupExpression>
+		</group>
+		<group name="Model">
+			<groupExpression><![CDATA[$F{Model}]]></groupExpression>
+		</group>
+		<group name="Date">
+			<groupExpression><![CDATA[$F{Date}]]></groupExpression>
+		</group>
+		<group name="customer_id">
+			<groupExpression><![CDATA[$F{customer_id}]]></groupExpression>
+		</group>
+		<group name="item_count">
+			<groupExpression><![CDATA[$F{item_count}]]></groupExpression>
+		</group>
+		<group name="defect_id">
+			<groupExpression><![CDATA[$F{defect_id}]]></groupExpression>
+		</group>
+		<group name="defect_Name">
+			<groupExpression><![CDATA[$F{defect_Name}]]></groupExpression>
+		</group>
+		<group name="Spare_id">
+			<groupExpression><![CDATA[$F{Spare_id}]]></groupExpression>
+		</group>
+		<group name="Spare_Name">
+			<groupExpression><![CDATA[$F{Spare_Name}]]></groupExpression>
+		</group>
+		<group name="Spare_count">
+			<groupExpression><![CDATA[$F{Spare_count}]]></groupExpression>
+		</group>
+		<group name="Emp_id">
+			<groupExpression><![CDATA[$F{Emp_id}]]></groupExpression>
+		</group>
+		<group name="Emp_Name">
+			<groupExpression><![CDATA[$F{Emp_Name}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="Job" uuid="932b93f4-ec70-4672-a8e5-0ee192691e8e">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM  quickmecengineers.job]]>
+		</queryString>
+		<field name="defect_Name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="defect_Name"/>
+			<property name="com.jaspersoft.studio.field.label" value="defect_Name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="item_count" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="item_count"/>
+			<property name="com.jaspersoft.studio.field.label" value="item_count"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Spare_Name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Spare_Name"/>
+			<property name="com.jaspersoft.studio.field.label" value="Spare_Name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Spare_count" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Spare_count"/>
+			<property name="com.jaspersoft.studio.field.label" value="Spare_count"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<field name="Emp_Name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Emp_Name"/>
+			<property name="com.jaspersoft.studio.field.label" value="Emp_Name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+		</field>
+		<group name="defect_Name">
+			<groupExpression><![CDATA[$F{defect_Name}]]></groupExpression>
+		</group>
+		<group name="item_count">
+			<groupExpression><![CDATA[$F{item_count}]]></groupExpression>
+		</group>
+		<group name="Spare_Name">
+			<groupExpression><![CDATA[$F{Spare_Name}]]></groupExpression>
+		</group>
+		<group name="Spare_count">
+			<groupExpression><![CDATA[$F{Spare_count}]]></groupExpression>
+		</group>
+		<group name="Emp_Name">
+			<groupExpression><![CDATA[$F{Emp_Name}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="JobId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM  quickmecengineers.job WHERE  quickmecengineers.job.`job_No` =  $P{JobId}]]>
+	</queryString>
+	<field name="job_No" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="job_No"/>
+		<property name="com.jaspersoft.studio.field.label" value="job_No"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="Model" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Model"/>
+		<property name="com.jaspersoft.studio.field.label" value="Model"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="Date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="customer_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="item_count" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="item_count"/>
+		<property name="com.jaspersoft.studio.field.label" value="item_count"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="defect_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="defect_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="defect_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="defect_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="defect_Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="defect_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="Spare_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Spare_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="Spare_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="Spare_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Spare_Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Spare_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="Spare_count" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Spare_count"/>
+		<property name="com.jaspersoft.studio.field.label" value="Spare_count"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="Emp_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Emp_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="Emp_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="Emp_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Emp_Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Emp_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<group name="job_No">
+		<groupExpression><![CDATA[$F{job_No}]]></groupExpression>
+	</group>
+	<group name="Model">
+		<groupExpression><![CDATA[$F{Model}]]></groupExpression>
+	</group>
+	<group name="Date">
+		<groupExpression><![CDATA[$F{Date}]]></groupExpression>
+	</group>
+	<group name="customer_id">
+		<groupExpression><![CDATA[$F{customer_id}]]></groupExpression>
+	</group>
+	<group name="item_count">
+		<groupExpression><![CDATA[$F{item_count}]]></groupExpression>
+	</group>
+	<group name="defect_id">
+		<groupExpression><![CDATA[$F{defect_id}]]></groupExpression>
+	</group>
+	<group name="defect_Name">
+		<groupExpression><![CDATA[$F{defect_Name}]]></groupExpression>
+	</group>
+	<group name="Spare_id">
+		<groupExpression><![CDATA[$F{Spare_id}]]></groupExpression>
+	</group>
+	<group name="Spare_Name">
+		<groupExpression><![CDATA[$F{Spare_Name}]]></groupExpression>
+	</group>
+	<group name="Spare_count">
+		<groupExpression><![CDATA[$F{Spare_count}]]></groupExpression>
+	</group>
+	<group name="Emp_id">
+		<groupExpression><![CDATA[$F{Emp_id}]]></groupExpression>
+	</group>
+	<group name="Emp_Name">
+		<groupExpression><![CDATA[$F{Emp_Name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="144" y="0" width="348" height="40" uuid="3cffcfc2-c89c-4ad4-a541-d28026a07932"/>
+				<textElement>
+					<font size="29" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[QUICK MEC ENGINEERS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="35" width="340" height="30" uuid="0301017a-90d4-4221-8090-3b0dc68190af"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[246, Quick Mec Engineers, Gorakapola, Panadura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="60" width="184" height="27" uuid="82bde39f-127e-47cf-8324-f6ba1cab1fe7"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Contact No : 077 910 0270]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="-6" width="102" height="100" uuid="dd135d09-5eb2-479b-86c4-54f2649d4aab"/>
+				<imageExpression><![CDATA["C:/Users/Lenovo/Documents/Project/QUICK_MEC_ENGINEERS/src/main/resources/images/QUICK MEC.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="-3" y="107" width="562" height="1" backcolor="#030303" uuid="c73b9985-631f-4066-a340-96f70664b348"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="486" splitType="Stretch">
+			<textField>
+				<reportElement x="132" y="22" width="100" height="30" uuid="2eb81e3e-edfa-4829-97ca-18457626a1f0"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_No}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="22" width="100" height="30" uuid="2ad563ca-f366-4f8f-83ad-18c3df606408"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Job_No  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="395" y="22" width="130" height="30" uuid="40a61944-adf6-4646-9eba-83475d3fa47c"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="295" y="22" width="100" height="30" uuid="b0b5e5fe-2215-465d-b1ed-2f354c1bbf04"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Date & Time  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="132" y="70" width="100" height="30" uuid="45497fae-dce4-4668-bf92-4ad22daf661c"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Model}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="70" width="100" height="30" uuid="942d007f-5de8-4c3f-a2ae-b9838f0c69b9"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Model  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="317" y="187" width="116" height="30" uuid="142d41cd-2646-4f97-842e-f8bcbd77ae80"/>
+				<textElement textAlignment="Left">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_count}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="317" y="150" width="116" height="30" uuid="17897ca8-bbb7-4f05-87e1-442e092678a7"/>
+				<textElement textAlignment="Left">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Item_Count]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="187" width="287" height="30" uuid="b101c7c3-0a89-4ac3-b327-17fec2f75b51"/>
+				<textElement textAlignment="Left">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{defect_Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="150" width="287" height="30" uuid="8b23e344-2d5c-4c0d-8ac1-51d0faf57b15"/>
+				<textElement textAlignment="Left">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Defect_Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="433" y="187" width="100" height="30" uuid="d1278fc8-d03c-41fa-8ca8-81e093d56402"/>
+				<textElement textAlignment="Left">
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Spare_Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="433" y="150" width="100" height="30" uuid="347bcf41-fb59-45ef-b39e-19e457cdee5f"/>
+				<textElement textAlignment="Left">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Spare_Name]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="30" y="180" width="503" height="1" backcolor="#030303" uuid="7830caa0-d83e-499d-9773-3f8eabd0ca17"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
