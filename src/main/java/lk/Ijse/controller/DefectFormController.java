@@ -181,7 +181,7 @@ public class DefectFormController {
     }
 
     private void getSpareId(){
-        ObservableList<String> obList = FXCollections.observableArrayList();
+        /*ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
             List<String> idList = SpareRepo.getId();
@@ -193,7 +193,7 @@ public class DefectFormController {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
     private void clearFeilds(){
