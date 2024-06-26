@@ -14,6 +14,8 @@ import java.util.List;
 
 public class DefectBoImpl implements DefectBO {
     DefectDAO defectDAO = new DefectDaoImpl();
+
+    @Override
     public boolean deleteDefect(String defectId) throws SQLException, ClassNotFoundException {
         return defectDAO.delete(defectId);
     }

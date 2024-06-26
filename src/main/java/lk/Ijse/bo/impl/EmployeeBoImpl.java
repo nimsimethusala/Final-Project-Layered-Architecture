@@ -13,6 +13,7 @@ import java.util.List;
 public class EmployeeBoImpl implements EmployeeBO {
     EmployeeDAO employeeDAO = new EmployeeDaoImpl();
 
+    @Override
     public boolean saveEmployee(EmployeeDTO employeeDTO) throws SQLException, ClassNotFoundException {
         return employeeDAO.save(new Employee(
                 employeeDTO.getEmpId(),
@@ -25,6 +26,7 @@ public class EmployeeBoImpl implements EmployeeBO {
         ));
     }
 
+    @Override
     public boolean updateEmployee(EmployeeDTO employeeDTO) throws SQLException, ClassNotFoundException {
         return employeeDAO.update(new Employee(
                 employeeDTO.getEmpId(),
@@ -37,10 +39,12 @@ public class EmployeeBoImpl implements EmployeeBO {
         ));
     }
 
+    @Override
     public boolean deleteEmplyee(String empId) throws SQLException, ClassNotFoundException {
         return employeeDAO.delete(empId);
     }
 
+    @Override
     public EmployeeDTO searchByEmployeeId(String tel) throws SQLException, ClassNotFoundException{
         Employee employee = employeeDAO.searchById(tel);
         return new EmployeeDTO(
@@ -54,6 +58,7 @@ public class EmployeeBoImpl implements EmployeeBO {
         );
     }
 
+    @Override
     public List<EmployeeDTO> getAllEmployees() throws SQLException, ClassNotFoundException{
         ArrayList<Employee> employees = new ArrayList<>();
         ArrayList<EmployeeDTO> employeeDTOS = new ArrayList<>();
@@ -65,26 +70,32 @@ public class EmployeeBoImpl implements EmployeeBO {
         return employeeDTOS;
     }
 
+    @Override
     public List<String> getEmployeeId() throws SQLException, ClassNotFoundException {
         return employeeDAO.getId();
     }
 
+    @Override
     public String getEmployeeName(String empId) throws SQLException, ClassNotFoundException {
         return employeeDAO.getName(empId);
     }
 
+    @Override
     public String generateNextEmployeeId() throws SQLException, ClassNotFoundException {
         return employeeDAO.generateNextId();
     }
 
+    @Override
     public double getEmployeeCost(String empId) throws SQLException, ClassNotFoundException {
         return employeeDAO.getEmployeeCost(empId);
     }
 
+    @Override
     public int getArrivedEmpCount() throws SQLException, ClassNotFoundException {
         return employeeDAO.getArrivedEmpCount();
     }
 
+    @Override
     public int getAbsentEmpCount() throws SQLException, ClassNotFoundException {
         return employeeDAO.getAbsentEmpCount();
     }

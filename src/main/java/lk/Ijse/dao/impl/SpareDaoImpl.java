@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpareDaoImpl implements SpareDAO {
+    @Override
     public boolean delete(String spareId) throws SQLException, ClassNotFoundException {
         /*String sql = "DELETE FROM spare WHERE Spare_id = ?";
 
@@ -22,6 +23,7 @@ public class SpareDaoImpl implements SpareDAO {
         return SQLUtil.execute("DELETE FROM spare WHERE Spare_id = ?", spareId);
     }
 
+    @Override
     public boolean save(Spares spares) throws SQLException, ClassNotFoundException {
         /*String sql = "INSERT INTO spare VALUES(?, ?, ?, ?, ?)";
 
@@ -39,6 +41,7 @@ public class SpareDaoImpl implements SpareDAO {
         return SQLUtil.execute("INSERT INTO spare VALUES(?, ?, ?, ?, ?)", spares);
     }
 
+    @Override
     public boolean update(Spares spares) throws SQLException, ClassNotFoundException {
         /*String sql = "UPDATE spare SET Name = ?, count = ?, price = ?, supplier_id = ? WHERE Spare_id = ?";
 
@@ -56,6 +59,7 @@ public class SpareDaoImpl implements SpareDAO {
         return SQLUtil.execute("UPDATE spare SET Name = ?, count = ?, price = ?, supplier_id = ? WHERE Spare_id = ?", spares);
     }
 
+    @Override
     public List<Spares> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM spare";
 
@@ -80,6 +84,7 @@ public class SpareDaoImpl implements SpareDAO {
         return spareList;
     }
 
+    @Override
     public List<String> getId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT Spare_id FROM spare";
 
@@ -95,6 +100,7 @@ public class SpareDaoImpl implements SpareDAO {
         return idList;
     }
 
+    @Override
     public String getName(String spareId) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT Name FROM spare WHERE Spare_id = ?";
 
@@ -112,6 +118,7 @@ public class SpareDaoImpl implements SpareDAO {
         return null;
     }
 
+    @Override
     public boolean update(Job job) throws SQLException {
         boolean isUpdateCount = updateQty(job.getSpareId(), job.getSpareCount());
 
@@ -121,6 +128,7 @@ public class SpareDaoImpl implements SpareDAO {
         return true;
     }
 
+    @Override
     public boolean updateQty(String spareId, int spareCount) throws SQLException, ClassNotFoundException {
         /*String sql = "UPDATE spare SET count = count - ? WHERE Spare_id = ?";
 
@@ -135,6 +143,7 @@ public class SpareDaoImpl implements SpareDAO {
         return SQLUtil.execute("UPDATE spare SET count = count - ? WHERE Spare_id = ?", spareId, spareCount);
     }
 
+    @Override
     public String generateNextId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT Spare_id FROM spare ORDER BY Spare_id DESC LIMIT 1";
 
@@ -169,6 +178,7 @@ public class SpareDaoImpl implements SpareDAO {
         return "SP001";
     }
 
+    @Override
     public Spares searchById(String id) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM spare WHERE Spare_id = ?";
 

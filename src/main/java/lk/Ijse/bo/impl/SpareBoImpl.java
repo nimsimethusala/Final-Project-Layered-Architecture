@@ -12,6 +12,8 @@ import java.util.List;
 
 public class SpareBoImpl implements SpareBO {
     SpareDAO spareDAO = new SpareDaoImpl();
+
+    @Override
     public boolean saveSpares(SparesDTO sparesDTO) throws SQLException, ClassNotFoundException {
         return spareDAO.save(new Spares(
                 sparesDTO.getSpareId(),
@@ -22,6 +24,7 @@ public class SpareBoImpl implements SpareBO {
         ));
     }
 
+    @Override
     public boolean updateSpares(SparesDTO sparesDTO) throws SQLException, ClassNotFoundException {
         return spareDAO.save(new Spares(
                 sparesDTO.getSpareId(),
@@ -32,15 +35,18 @@ public class SpareBoImpl implements SpareBO {
         ));
     }
 
+    @Override
     public boolean deleteSpares(String spareId) throws SQLException, ClassNotFoundException {
         return spareDAO.delete(spareId);
     }
 
+    @Override
     public SparesDTO searchBySpareId(String id) throws SQLException, ClassNotFoundException {
         Spares spares = spareDAO.searchById(id);
         return new SparesDTO(spares.getSpareId(), spares.getName(), spares.getCount(), spares.getPrice(), spares.getSupplierId());
     }
 
+    @Override
     public List<SparesDTO> getAllSpares() throws SQLException, ClassNotFoundException {
         ArrayList<Spares> spares = new ArrayList<>();
         ArrayList<SparesDTO> sparesDTOS = new ArrayList<>();
@@ -52,22 +58,27 @@ public class SpareBoImpl implements SpareBO {
         return sparesDTOS;
     }
 
+    @Override
     public List<String> getSpareId() throws SQLException, ClassNotFoundException {
         return spareDAO.getId();
     }
 
+    @Override
     public String getSpareName(String spareId) throws SQLException, ClassNotFoundException{
         return spareDAO.getName(spareId);
     }
 
+    @Override
     public String generateNextSpareId() throws SQLException, ClassNotFoundException {
         return spareDAO.generateNextId();
     }
 
+    @Override
     public boolean update(Job job) throws SQLException {
         return spareDAO.update(job);
     }
 
+    @Override
     public boolean updateSpareQty(String spareId, int spareCount) throws SQLException, ClassNotFoundException {
         return spareDAO.updateQty(spareId, spareCount);
     }

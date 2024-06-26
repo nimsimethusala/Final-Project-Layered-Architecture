@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemDaoImpl implements ItemDAO {
+    @Override
     public boolean delete(String itemId) throws SQLException, ClassNotFoundException {
         /*String sql = "DELETE FROM item WHERE item_No = ?";
 
@@ -22,6 +23,7 @@ public class ItemDaoImpl implements ItemDAO {
         return SQLUtil.execute("DELETE FROM item WHERE item_No = ?", itemId);
     }
 
+    @Override
     public List<String> getId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT item_No FROM item";
 
@@ -37,6 +39,7 @@ public class ItemDaoImpl implements ItemDAO {
         return idList;
     }
 
+    @Override
     public String getName(String itemId) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT Name FROM item WHERE item_No = ?";
 
@@ -55,6 +58,7 @@ public class ItemDaoImpl implements ItemDAO {
         return null;
     }
 
+    @Override
     public boolean update(List<JobDetail> jobList) throws SQLException {
         for (JobDetail list : jobList) {
             boolean isUpdateCount = updateQty(list.getItemId(), list.getItemCount());
@@ -66,6 +70,7 @@ public class ItemDaoImpl implements ItemDAO {
         return true;
     }
 
+    @Override
     public boolean updateQty(String itemId, int itemCount) throws SQLException, ClassNotFoundException {
         /*String sql = "UPDATE item SET Item_count = Item_count - ? WHERE item_No = ?";
 
@@ -80,6 +85,7 @@ public class ItemDaoImpl implements ItemDAO {
         return SQLUtil.execute("UPDATE item SET Item_count = Item_count - ? WHERE item_No = ?", itemId, itemCount);
     }
 
+    @Override
     public boolean save(Item item) throws SQLException, ClassNotFoundException {
         /*String sql = "INSERT INTO item VALUES(?, ?, ?, ?)";
 
@@ -96,6 +102,7 @@ public class ItemDaoImpl implements ItemDAO {
         return SQLUtil.execute("INSERT INTO item VALUES(?, ?, ?, ?)", item);
     }
 
+    @Override
     public boolean update(Item item) throws SQLException, ClassNotFoundException {
         /*String sql = "UPDATE item SET Name = ?, defect_id = ?, Item_count = ? WHERE item_No = ?";
 
@@ -112,6 +119,7 @@ public class ItemDaoImpl implements ItemDAO {
         return SQLUtil.execute("UPDATE item SET Name = ?, defect_id = ?, Item_count = ? WHERE item_No = ?", item);
     }
 
+    @Override
     public List<Item> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM item";
 
@@ -135,6 +143,7 @@ public class ItemDaoImpl implements ItemDAO {
         return itemList;
     }
 
+    @Override
     public String generateNextId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT item_No FROM item ORDER BY item_No DESC LIMIT 1";
 
@@ -169,6 +178,7 @@ public class ItemDaoImpl implements ItemDAO {
         return "I001";
     }
 
+    @Override
     public Item searchById(String id) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM item WHERE item_No = ?";
 

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDaoImpl implements EmployeeDAO {
-
+    @Override
     public boolean delete(String empId) throws SQLException, ClassNotFoundException {
         /*String sql = "DELETE FROM employee WHERE Emp_id = ?";
 
@@ -23,6 +23,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return SQLUtil.execute("DELETE FROM employee WHERE Emp_id = ?", empId);
     }
 
+    @Override
     public boolean save(Employee employee) throws SQLException, ClassNotFoundException {
         /*String sql = "INSERT INTO employee VALUES(?, ?, ?, ?, ?, ?, ?)";
 
@@ -42,6 +43,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return SQLUtil.execute("INSERT INTO employee VALUES(?, ?, ?, ?, ?, ?, ?)", employee);
     }
 
+    @Override
     public boolean update(Employee employee) throws SQLException, ClassNotFoundException {
         /*String sql = "UPDATE employee SET Name = ?, attendence = ?, address = ?, contact = ?, salary = ?, cost = ? WHERE Emp_id = ?";
 
@@ -61,6 +63,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return SQLUtil.execute("UPDATE employee SET Name = ?, attendence = ?, address = ?, contact = ?, salary = ?, cost = ? WHERE Emp_id = ?", employee);
     }
 
+    @Override
     public List<Employee> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM employee";
 
@@ -86,6 +89,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return empList;
     }
 
+    @Override
     public double getEmployeeCost(String empId) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT cost FROM employee WHERE Emp_id = ?";
 
@@ -102,6 +106,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return 0.0;
     }
 
+    @Override
     public List<String> getId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT Emp_id FROM employee";
 
@@ -117,6 +122,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return idList;
     }
 
+    @Override
     public String generateNextId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT Emp_id FROM employee ORDER BY Emp_id DESC LIMIT 1";
 
@@ -151,6 +157,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return "E001";
     }
 
+    @Override
     public String getName(String empId) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT Name FROM employee WHERE Emp_id = ?";
 
@@ -168,6 +175,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return null;
     }
 
+    @Override
     public Employee searchById(String id) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM employee WHERE Emp_id = ?";
 
@@ -193,6 +201,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return null;
     }
 
+    @Override
     public int getArrivedEmpCount() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT attendence FROM employee WHERE attendence = 'Yes'";
 
@@ -210,6 +219,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return 0;
     }
 
+    @Override
     public int getAbsentEmpCount() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT attendence FROM employee WHERE attendence = 'No'";
 
