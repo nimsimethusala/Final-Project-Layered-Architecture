@@ -1,0 +1,22 @@
+.button{
+    -fx-background-color:  #a4b0be;
+    -fx-border-color:  #a4b0be;
+}
+
+.button:hover{
+    -fx-background-color: #F8EFBA;
+    -fx-border-color: #F8EFBA;
+}
+
+.dashboardButton{
+    -fx-background-color:  #485460;
+    -fx-border-color:  #485460;
+}
+
+.dashboardButton:hover{
+    -fx-background-color: #2f3542;
+    -fx-border-color: #2f3542;
+}
+
+
+
