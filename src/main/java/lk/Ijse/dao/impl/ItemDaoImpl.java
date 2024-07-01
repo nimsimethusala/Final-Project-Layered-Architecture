@@ -3,6 +3,7 @@ package lk.Ijse.dao.impl;
 import lk.Ijse.dao.ItemDAO;
 import lk.Ijse.dao.SQLUtil;
 import lk.Ijse.entity.Item;
+import lk.Ijse.entity.JobDetail;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -58,8 +59,7 @@ public class ItemDaoImpl implements ItemDAO {
         return null;
     }
 
-    @Override
-    public boolean update(List<JobDetail> jobList) throws SQLException {
+    public boolean update(List<JobDetail> jobList) throws SQLException, ClassNotFoundException {
         for (JobDetail list : jobList) {
             boolean isUpdateCount = updateQty(list.getItemId(), list.getItemCount());
 

@@ -2,6 +2,7 @@ package lk.Ijse.dao.impl;
 
 import lk.Ijse.dao.SQLUtil;
 import lk.Ijse.dao.SpareDAO;
+import lk.Ijse.entity.Job;
 import lk.Ijse.entity.Spares;
 
 import java.sql.ResultSet;
@@ -119,7 +120,7 @@ public class SpareDaoImpl implements SpareDAO {
     }
 
     @Override
-    public boolean update(Job job) throws SQLException {
+    public boolean update(Job job) throws SQLException, ClassNotFoundException {
         boolean isUpdateCount = updateQty(job.getSpareId(), job.getSpareCount());
 
         if(!isUpdateCount) {
