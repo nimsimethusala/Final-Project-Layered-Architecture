@@ -1,5 +1,6 @@
 package lk.Ijse.bo.impl;
 
+import com.beust.ah.A;
 import lk.Ijse.bo.PlaceJobBO;
 import lk.Ijse.bo.SpareBO;
 import lk.Ijse.dao.*;
@@ -96,14 +97,20 @@ public class PlaceJobBoImpl implements PlaceJobBO {
         Connection connection = DbConnection.getInstance().getConnection();
         connection.setAutoCommit(false);
 
+        ArrayList<JobDetail> jobDetails = new ArrayList<>();
+
         try {
             boolean isJobSaved = jobDAO.save(placeJobDTO.getJob());
             System.out.println("1 "+ isJobSaved);
             if (isJobSaved) {
-                boolean isQtyUpdated = itemDAO.update(placeJobDTO.getJobList());
+                for (JobDetailDTO list : placeJobDTO.getJobList()){
+                    JobDetail jobDetail = new JobDetail(list.getItemId(), list.getItemCount(), list.getModel(), list.getJobId(), list.getSpareCount());
+                    jobDetails.add(jobDetail);
+                }
+                boolean isQtyUpdated = itemDAO.update(jobDetails);
                 System.out.println("2 "+ isQtyUpdated);
                 if (isQtyUpdated) {
-                    boolean isOrderDetailSaved = jobDetailDAO.save(placeJobDTO.getJobList());
+                    boolean isOrderDetailSaved = jobDetailDAO.save(jobDetails);
                     System.out.println("3 "+ isOrderDetailSaved);
                     if (isOrderDetailSaved) {
                         boolean isSpareQtyUpdate = spareDAO.update(placeJobDTO.getJob());
