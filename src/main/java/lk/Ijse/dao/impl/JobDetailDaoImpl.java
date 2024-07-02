@@ -8,6 +8,7 @@ import lk.Ijse.entity.JobDetail;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JobDetailDaoImpl implements JobDetailDAO {
@@ -52,7 +53,7 @@ public class JobDetailDaoImpl implements JobDetailDAO {
     }
 
     @Override
-    public List<JobDetail> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<JobDetail> getAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 

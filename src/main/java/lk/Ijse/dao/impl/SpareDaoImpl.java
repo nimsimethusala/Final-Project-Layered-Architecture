@@ -61,7 +61,7 @@ public class SpareDaoImpl implements SpareDAO {
     }
 
     @Override
-    public List<Spares> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Spares> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM spare";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -69,7 +69,7 @@ public class SpareDaoImpl implements SpareDAO {
 
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM spare");
 
-        List<Spares> spareList = new ArrayList<>();
+        ArrayList<Spares> spareList = new ArrayList<>();
 
         while (resultSet.next()){
             String spareId = resultSet.getString(1);

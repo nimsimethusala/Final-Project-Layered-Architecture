@@ -3,6 +3,7 @@ package lk.Ijse.dao;
 import lk.Ijse.entity.Customer;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO{
@@ -14,7 +15,7 @@ public interface CrudDAO<T> extends SuperDAO{
 
     public T searchById(String tel) throws SQLException, ClassNotFoundException;
 
-    public List<T> getAll() throws SQLException, ClassNotFoundException;
+    public ArrayList<T> getAll() throws SQLException, ClassNotFoundException;
 
     public List<String> getId() throws SQLException, ClassNotFoundException;
 

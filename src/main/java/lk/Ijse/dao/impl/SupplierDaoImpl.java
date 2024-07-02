@@ -58,7 +58,7 @@ public class SupplierDaoImpl implements SupplierDAO {
     }
 
     @Override
-    public List<Supplier> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Supplier> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM supplier";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -66,7 +66,7 @@ public class SupplierDaoImpl implements SupplierDAO {
 
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM supplier");
 
-        List<Supplier> supplierList = new ArrayList<>();
+        ArrayList<Supplier> supplierList = new ArrayList<>();
 
         while (resultSet.next()){
             String supId = resultSet.getString(1);

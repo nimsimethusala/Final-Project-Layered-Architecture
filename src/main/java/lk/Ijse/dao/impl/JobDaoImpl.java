@@ -155,7 +155,7 @@ public class JobDaoImpl implements JobDAO {
     }
 
     @Override
-    public List<Job> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Job> getAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 

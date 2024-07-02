@@ -1,5 +1,6 @@
 package lk.Ijse.bo;
 
+import lk.Ijse.dto.JobDTO;
 import lk.Ijse.dto.SparesDTO;
 import lk.Ijse.entity.Spares;
 
@@ -23,7 +24,7 @@ public interface SpareBO extends SuperBO{
 
     public String generateNextSpareId() throws SQLException, ClassNotFoundException;
 
-    public boolean update(Job job) throws SQLException;
+    public boolean update(JobDTO job) throws SQLException, ClassNotFoundException;
 
     public boolean updateSpareQty(String spareId, int spareCount) throws SQLException, ClassNotFoundException;
 }

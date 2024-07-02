@@ -217,14 +217,14 @@ public class SpareFormController {
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
-            List<String> idList = SupplierRepo.getId();
+            List<String> idList = spareBO.getSpareId();
 
             for (String code : idList) {
                 obList.add(code);
             }
             cmbSupplierId.setItems(obList);
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

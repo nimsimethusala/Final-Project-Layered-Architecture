@@ -120,7 +120,7 @@ public class ItemDaoImpl implements ItemDAO {
     }
 
     @Override
-    public List<Item> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Item> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM item";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -128,7 +128,7 @@ public class ItemDaoImpl implements ItemDAO {
 
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM item");
 
-        List<Item> itemList = new ArrayList<>();
+        ArrayList<Item> itemList = new ArrayList<>();
 
         while (resultSet.next()){
             String itemId = resultSet.getString(1);

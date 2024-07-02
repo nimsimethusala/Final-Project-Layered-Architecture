@@ -4,7 +4,9 @@ import lk.Ijse.bo.ItemBO;
 import lk.Ijse.dao.ItemDAO;
 import lk.Ijse.dao.impl.ItemDaoImpl;
 import lk.Ijse.dto.ItemDTO;
+import lk.Ijse.dto.JobDetailDTO;
 import lk.Ijse.entity.Item;
+import lk.Ijse.entity.JobDetail;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -72,8 +74,14 @@ public class ItemBoImpl implements ItemBO {
     }
 
     @Override
-    public boolean update(List<JobDetail> jobList) throws SQLException {
-        return itemDAO.update(jobList);
+    public boolean update(List<JobDetailDTO> jobList) throws SQLException, ClassNotFoundException {
+        ArrayList<JobDetail> jobDetails = new ArrayList<>();
+
+        for (JobDetailDTO jobDetailDTO : jobList){
+            JobDetail jobDetail = new JobDetail(jobDetailDTO.getItemId(), jobDetailDTO.getItemCount(), jobDetailDTO.getModel(), jobDetailDTO.getJobId(), jobDetailDTO.getSpareCount());
+            jobDetails.add(jobDetail);
+        }
+        return itemDAO.update(jobDetails);
     }
 
     @Override

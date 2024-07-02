@@ -3,7 +3,9 @@ package lk.Ijse.bo.impl;
 import lk.Ijse.bo.SpareBO;
 import lk.Ijse.dao.SpareDAO;
 import lk.Ijse.dao.impl.SpareDaoImpl;
+import lk.Ijse.dto.JobDTO;
 import lk.Ijse.dto.SparesDTO;
+import lk.Ijse.entity.Job;
 import lk.Ijse.entity.Spares;
 
 import java.sql.SQLException;
@@ -74,7 +76,22 @@ public class SpareBoImpl implements SpareBO {
     }
 
     @Override
-    public boolean update(Job job) throws SQLException {
+    public boolean update(JobDTO jobDTO) throws SQLException, ClassNotFoundException {
+        Job job = new Job(
+                jobDTO.getJobId(),
+                jobDTO.getModel(),
+                jobDTO.getDate(),
+                jobDTO.getCustomerId(),
+                jobDTO.getDefectId(),
+                jobDTO.getDefectName(),
+                jobDTO.getItemCount(),
+                jobDTO.getSpareId(),
+                jobDTO.getSpareName(),
+                jobDTO.getSpareCount(),
+                jobDTO.getEmpId(),
+                jobDTO.getEmpCost(),
+                jobDTO.getEmpName()
+        );
         return spareDAO.update(job);
     }
 

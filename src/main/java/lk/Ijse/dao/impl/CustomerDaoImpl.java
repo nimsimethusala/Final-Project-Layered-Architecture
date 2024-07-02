@@ -89,7 +89,7 @@ public class CustomerDaoImpl implements CustomerDAO {
     }
 
     @Override
-    public List<Customer> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Customer> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM customer";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -97,7 +97,7 @@ public class CustomerDaoImpl implements CustomerDAO {
 
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM customer");
 
-        List<Customer> customerList = new ArrayList<>();
+        ArrayList<Customer> customerList = new ArrayList<>();
 
         while (resultSet.next()){
             String cusId = resultSet.getString(1);

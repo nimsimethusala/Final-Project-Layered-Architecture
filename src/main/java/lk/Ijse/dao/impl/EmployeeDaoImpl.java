@@ -64,14 +64,14 @@ public class EmployeeDaoImpl implements EmployeeDAO {
     }
 
     @Override
-    public List<Employee> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Employee> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM employee";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);*/
 
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM employee");
-        List<Employee> empList = new ArrayList<>();
+        ArrayList<Employee> empList = new ArrayList<>();
 
         while (resultSet.next()){
             String empId = resultSet.getString(1);

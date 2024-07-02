@@ -61,14 +61,14 @@ public class DefectDaoImpl implements DefectDAO {
     }
 
     @Override
-    public List<Defect> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Defect> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM defect";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);*/
 
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM defect");
-        List<Defect> defectList = new ArrayList<>();
+        ArrayList<Defect> defectList = new ArrayList<>();
 
         while (resultSet.next()){
             String defectId = resultSet.getString(1);

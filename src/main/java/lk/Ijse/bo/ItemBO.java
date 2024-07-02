@@ -1,6 +1,7 @@
 package lk.Ijse.bo;
 
 import lk.Ijse.dto.ItemDTO;
+import lk.Ijse.dto.JobDetailDTO;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -22,7 +23,7 @@ public interface ItemBO extends SuperBO{
 
     public String generateNextItemId() throws SQLException, ClassNotFoundException;
 
-    public boolean update(List<JobDetail> jobList) throws SQLException;
+    public boolean update(List<JobDetailDTO> jobList) throws SQLException, ClassNotFoundException;
 
     public boolean updateItemQty(String itemId, int itemCount) throws SQLException, ClassNotFoundException;
 }
