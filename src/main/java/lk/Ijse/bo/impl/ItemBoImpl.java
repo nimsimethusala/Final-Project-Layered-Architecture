@@ -48,7 +48,7 @@ public class ItemBoImpl implements ItemBO {
 
     @Override
     public List<ItemDTO> getAllItems() throws SQLException, ClassNotFoundException {
-        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<Item> items = itemDAO.getAll();
         ArrayList<ItemDTO> itemDTOS = new ArrayList<>();
 
         for (Item item : items){

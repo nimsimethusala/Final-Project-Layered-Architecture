@@ -42,7 +42,7 @@ public class DefectBoImpl implements DefectBO {
 
     @Override
     public List<DefectDTO> getAllDefects() throws SQLException, ClassNotFoundException {
-        ArrayList<Defect> defects = new ArrayList<>();
+        ArrayList<Defect> defects = defectDAO.getAll();
         ArrayList<DefectDTO> defectDTOS = new ArrayList<>();
 
         for (Defect defect : defects){

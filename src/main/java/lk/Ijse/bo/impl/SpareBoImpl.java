@@ -50,7 +50,7 @@ public class SpareBoImpl implements SpareBO {
 
     @Override
     public List<SparesDTO> getAllSpares() throws SQLException, ClassNotFoundException {
-        ArrayList<Spares> spares = new ArrayList<>();
+        ArrayList<Spares> spares = spareDAO.getAll();
         ArrayList<SparesDTO> sparesDTOS = new ArrayList<>();
 
         for (Spares spare : spares){
