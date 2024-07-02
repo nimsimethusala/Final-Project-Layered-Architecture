@@ -57,7 +57,11 @@ public class DefectDaoImpl implements DefectDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("UPDATE defect SET description = ?, price = ?, Spare_id = ? WHERE defect_id = ?", defect);
+        return SQLUtil.execute("UPDATE defect SET description = ?, price = ?, Spare_id = ? WHERE defect_id = ?",
+                defect.getDescription(),
+                defect.getPrice(),
+                defect.getSpareId(),
+                defect.getDefectId());
     }
 
     @Override

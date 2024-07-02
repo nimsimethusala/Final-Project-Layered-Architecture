@@ -60,7 +60,14 @@ public class EmployeeDaoImpl implements EmployeeDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("UPDATE employee SET Name = ?, attendence = ?, address = ?, contact = ?, salary = ?, cost = ? WHERE Emp_id = ?", employee);
+        return SQLUtil.execute("UPDATE employee SET Name = ?, attendence = ?, address = ?, contact = ?, salary = ?, cost = ? WHERE Emp_id = ?",
+                employee.getName(),
+                employee.getAttendance(),
+                employee.getAddress(),
+                employee.getContact(),
+                employee.getSalary(),
+                employee.getCost(),
+                employee.getEmpId());
     }
 
     @Override

@@ -57,7 +57,12 @@ public class SpareDaoImpl implements SpareDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("UPDATE spare SET Name = ?, count = ?, price = ?, supplier_id = ? WHERE Spare_id = ?", spares);
+        return SQLUtil.execute("UPDATE spare SET Name = ?, count = ?, price = ?, supplier_id = ? WHERE Spare_id = ?",
+                spares.getName(),
+                spares.getCount(),
+                spares.getPrice(),
+                spares.getSupplierId(),
+                spares.getSpareId());
     }
 
     @Override

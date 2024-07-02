@@ -38,7 +38,7 @@ public class JobDetailDaoImpl implements JobDetailDAO {
     }
 
     @Override
-    public boolean update(JobDetail customer) throws SQLException, ClassNotFoundException {
+    public boolean update(JobDetail jobDetail) throws SQLException, ClassNotFoundException {
         return false;
     }
 

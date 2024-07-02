@@ -140,7 +140,7 @@ public class JobDaoImpl implements JobDAO {
     }
 
     @Override
-    public boolean update(Job customer) throws SQLException, ClassNotFoundException {
+    public boolean update(Job job) throws SQLException, ClassNotFoundException {
         return false;
     }
 

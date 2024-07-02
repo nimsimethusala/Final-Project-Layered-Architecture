@@ -116,7 +116,11 @@ public class ItemDaoImpl implements ItemDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("UPDATE item SET Name = ?, defect_id = ?, Item_count = ? WHERE item_No = ?", item);
+        return SQLUtil.execute("UPDATE item SET Name = ?, defect_id = ?, Item_count = ? WHERE item_No = ?",
+                item.getItemName(),
+                item.getDefectId(),
+                item.getItemCount(),
+                item.getItemID());
     }
 
     @Override

@@ -46,10 +46,11 @@ public class CustomerDaoImpl implements CustomerDAO {
         return pstm.executeUpdate() > 0;*/
 
         return SQLUtil.execute("UPDATE customer SET customer_name = ?, address = ?, contact = ? WHERE customer_id = ?",
-                customer.getId(),
                 customer.getName(),
                 customer.getAddress(),
-                customer.getTel());
+                customer.getTel(),
+                customer.getId()
+        );
     }
 
     @Override

@@ -54,7 +54,11 @@ public class SupplierDaoImpl implements SupplierDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("UPDATE supplier SET name = ?, location = ?, contact = ? WHERE supplier_id = ?", supplier);
+        return SQLUtil.execute("UPDATE supplier SET name = ?, location = ?, contact = ? WHERE supplier_id = ?",
+                supplier.getName(),
+                supplier.getLocation(),
+                supplier.getContact(),
+                supplier.getSupplierId());
     }
 
     @Override
