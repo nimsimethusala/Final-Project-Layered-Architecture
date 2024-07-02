@@ -1,6 +1,7 @@
 package lk.Ijse.bo.impl;
 
 import lk.Ijse.bo.ItemBO;
+import lk.Ijse.dao.DAOFactory;
 import lk.Ijse.dao.ItemDAO;
 import lk.Ijse.dao.impl.ItemDaoImpl;
 import lk.Ijse.dto.ItemDTO;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemBoImpl implements ItemBO {
-    ItemDAO itemDAO = new ItemDaoImpl();
+    ItemDAO itemDAO = (ItemDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
 
     @Override
     public boolean saveItem(ItemDTO itemDTO) throws SQLException, ClassNotFoundException {

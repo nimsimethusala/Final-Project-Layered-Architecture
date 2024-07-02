@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.CustomerBO;
 import lk.Ijse.bo.impl.CustomerBoImpl;
 import lk.Ijse.dto.CustomerDTO;
@@ -58,7 +59,7 @@ public class CustomerFormController {
     @FXML
     private TextField txtSearch;
 
-    CustomerBO customerBO = new CustomerBoImpl();
+    CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
     public void initialize() {
         txtCustomerName.setOnKeyPressed(event -> {

@@ -14,6 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.DefectBO;
 import lk.Ijse.bo.impl.DefectBoImpl;
 import lk.Ijse.dto.DefectDTO;
@@ -55,7 +56,7 @@ public class DefectFormController {
     @FXML
     private TextField txtSearch;
 
-    public DefectBO defectBO = new DefectBoImpl();
+    public DefectBO defectBO = (DefectBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.DEFECT);
 
     public void initialize() {
         txtDescription.setOnKeyPressed(event -> {

@@ -107,17 +107,17 @@ public class JobFormController implements Initializable {
 
     private ObservableList<JobTm> obList = FXCollections.observableArrayList();
 
-    public CustomerBO customerBO = new CustomerBoImpl();
+    public CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
-    public ItemBO itemBO = new ItemBoImpl();
+    public ItemBO itemBO = (ItemBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ITEM);
 
-    public SpareBO spareBO = new SpareBoImpl();
+    public SpareBO spareBO = (SpareBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.SPARE);
 
-    public DefectBO defectBO = new DefectBoImpl();
+    public DefectBO defectBO = (DefectBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.DEFECT);
 
-    public EmployeeBO employeeBO = new EmployeeBoImpl();
+    public EmployeeBO employeeBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.EMPLOYEE);
 
-    public PlaceJobBO placeJobBO = new PlaceJobBoImpl();
+    public PlaceJobBO placeJobBO = (PlaceJobBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PLACE_JOB);
 
     @FXML
     void btnNewCustomerOnAction(ActionEvent event) {

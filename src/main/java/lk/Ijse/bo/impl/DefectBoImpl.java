@@ -1,6 +1,7 @@
 package lk.Ijse.bo.impl;
 
 import lk.Ijse.bo.DefectBO;
+import lk.Ijse.dao.DAOFactory;
 import lk.Ijse.dao.DefectDAO;
 import lk.Ijse.dao.SQLUtil;
 import lk.Ijse.dao.impl.DefectDaoImpl;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DefectBoImpl implements DefectBO {
-    DefectDAO defectDAO = new DefectDaoImpl();
+    DefectDAO defectDAO = (DefectDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.DEFECT);
 
     @Override
     public boolean deleteDefect(String defectId) throws SQLException, ClassNotFoundException {

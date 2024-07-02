@@ -5,7 +5,7 @@ import lk.Ijse.dto.SupplierDTO;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface SupplierBO {
+public interface SupplierBO extends SuperBO{
     public boolean saveSupplier(SupplierDTO supplierDTO) throws SQLException, ClassNotFoundException;
 
     public boolean updateSupplier(SupplierDTO supplierDTO) throws SQLException, ClassNotFoundException;

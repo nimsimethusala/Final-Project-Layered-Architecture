@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.DefectBO;
 import lk.Ijse.bo.ItemBO;
 import lk.Ijse.bo.impl.DefectBoImpl;
@@ -51,17 +52,14 @@ public class ItemFormController {
     private TableColumn<?, ?> colName;
 
     @FXML
-    private TextField txtItemCount;
-
-    @FXML
     private TextField txtName;
 
     @FXML
     private TextField txtSearch;
 
-    public ItemBO itemBO = new ItemBoImpl();
+    public ItemBO itemBO = (ItemBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ITEM);
 
-    public DefectBO defectBO = new DefectBoImpl();
+    public DefectBO defectBO = (DefectBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.DEFECT);
 
     public void initialize(){
         getCurrentItemId();

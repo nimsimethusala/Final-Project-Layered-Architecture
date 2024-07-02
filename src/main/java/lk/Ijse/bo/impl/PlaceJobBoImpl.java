@@ -20,13 +20,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlaceJobBoImpl implements PlaceJobBO {
-    JobDAO jobDAO = new JobDaoImpl();
+    JobDAO jobDAO = (JobDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.JOB);
 
-    JobDetailDAO jobDetailDAO = new JobDetailDaoImpl();
+    JobDetailDAO jobDetailDAO = (JobDetailDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.JOB_DETAIL);
 
-    ItemDAO itemDAO = new ItemDaoImpl();
+    ItemDAO itemDAO = (ItemDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
 
-    SpareDAO spareDAO = new SpareDaoImpl();
+    SpareDAO spareDAO = (SpareDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.SPARE);
 
     @Override
     public boolean save(JobDTO jobDTO) throws SQLException, ClassNotFoundException {
@@ -75,9 +75,6 @@ public class PlaceJobBoImpl implements PlaceJobBO {
     @Override
     public boolean save(List<JobDetailDTO> jobList) throws SQLException, ClassNotFoundException {
         for (JobDetailDTO list : jobList) {
-            /*JobDetail jobDetail = new JobDetail(list.getItemId(), list.getItemCount(), list.getModel(), list.getJobId(), list.getSpareCount());
-            ArrayList<JobDetail> jobDetails = new ArrayList<>();
-            jobDetails.add(jobDetail);*/
             boolean isSaved = save(list);
             if(!isSaved) {
                 return false;

@@ -13,6 +13,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.SpareBO;
 import lk.Ijse.bo.impl.SpareBoImpl;
 import lk.Ijse.dto.SparesDTO;
@@ -59,7 +60,7 @@ public class SpareFormController {
     @FXML
     private TextField txtSearch;
 
-    SpareBO spareBO = new SpareBoImpl();
+    SpareBO spareBO = (SpareBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.SPARE);
 
     public void initialize(){
         txtName.setOnKeyPressed(event -> {

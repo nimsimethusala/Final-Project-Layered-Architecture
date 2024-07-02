@@ -2,6 +2,7 @@ package lk.Ijse.bo.impl;
 
 import lk.Ijse.bo.CustomerBO;
 import lk.Ijse.dao.CustomerDAO;
+import lk.Ijse.dao.DAOFactory;
 import lk.Ijse.dao.SQLUtil;
 import lk.Ijse.dao.impl.CustomerDaoImpl;
 import lk.Ijse.dto.CustomerDTO;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerBoImpl implements CustomerBO {
-    CustomerDAO customerDAO = new CustomerDaoImpl();
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
 
     @Override
     public boolean saveCustomer(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException {

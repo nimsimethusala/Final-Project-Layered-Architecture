@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.EmployeeBO;
 import lk.Ijse.bo.impl.EmployeeBoImpl;
 
@@ -35,7 +36,7 @@ public class DashboardFormController implements Initializable {
     @FXML
     private AnchorPane Root;
 
-    EmployeeBO employeeBO = new EmployeeBoImpl();
+    EmployeeBO employeeBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.EMPLOYEE);
 
     public void initialize(){
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
@@ -64,9 +65,6 @@ public class DashboardFormController implements Initializable {
         try {
             int empAttendCount = employeeBO.getArrivedEmpCount();
             int empAbsentCount = employeeBO.getAbsentEmpCount();
-
-
-
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

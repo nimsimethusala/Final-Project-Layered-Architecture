@@ -12,6 +12,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.SupplierBO;
 import lk.Ijse.bo.impl.SupplierBoImpl;
 import lk.Ijse.dto.SupplierDTO;
@@ -54,7 +55,7 @@ public class SupplierFormController {
     @FXML
     private TextField txtSupplierName;
 
-    SupplierBO supplierBO = new SupplierBoImpl();
+    SupplierBO supplierBO = (SupplierBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.SUPPLIER);
 
     public void initialize() {
         txtSupplierName.setOnKeyPressed(event -> {

@@ -1,6 +1,7 @@
 package lk.Ijse.bo.impl;
 
 import lk.Ijse.bo.SpareBO;
+import lk.Ijse.dao.DAOFactory;
 import lk.Ijse.dao.SpareDAO;
 import lk.Ijse.dao.impl.SpareDaoImpl;
 import lk.Ijse.dto.JobDTO;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpareBoImpl implements SpareBO {
-    SpareDAO spareDAO = new SpareDaoImpl();
+    SpareDAO spareDAO = (SpareDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.SPARE);
 
     @Override
     public boolean saveSpares(SparesDTO sparesDTO) throws SQLException, ClassNotFoundException {

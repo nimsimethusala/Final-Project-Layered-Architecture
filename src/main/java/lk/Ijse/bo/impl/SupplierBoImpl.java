@@ -1,6 +1,7 @@
 package lk.Ijse.bo.impl;
 
 import lk.Ijse.bo.SupplierBO;
+import lk.Ijse.dao.DAOFactory;
 import lk.Ijse.dao.SupplierDAO;
 import lk.Ijse.dao.impl.SupplierDaoImpl;
 import lk.Ijse.dto.SupplierDTO;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SupplierBoImpl implements SupplierBO {
-    SupplierDAO supplierDAO = new SupplierDaoImpl();
+    SupplierDAO supplierDAO = (SupplierDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.SUPPLIER);
 
     @Override
     public boolean saveSupplier(SupplierDTO supplierDTO) throws SQLException, ClassNotFoundException {

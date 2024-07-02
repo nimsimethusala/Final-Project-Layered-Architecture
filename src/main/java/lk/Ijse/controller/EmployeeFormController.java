@@ -14,6 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.EmployeeBO;
 import lk.Ijse.bo.impl.EmployeeBoImpl;
 import lk.Ijse.dto.EmployeeDTO;
@@ -72,7 +73,7 @@ public class EmployeeFormController {
     @FXML
     private TextField txtSearch;
 
-    public EmployeeBO employeeBO = new EmployeeBoImpl();
+    public EmployeeBO employeeBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.EMPLOYEE);
 
     public void initialize(){
         txtEmployeeName.setOnKeyPressed(event -> {
