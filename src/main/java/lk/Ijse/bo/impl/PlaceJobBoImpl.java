@@ -89,6 +89,10 @@ public class PlaceJobBoImpl implements PlaceJobBO {
         return jobDetailDAO.save(jobDetail);
     }
 
+    public List<String> getJobId() throws SQLException, ClassNotFoundException {
+        return jobDAO.getId();
+    }
+
     @Override
     public boolean placeOrder(PlaceJobDTO placeJobDTO) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
@@ -104,6 +108,7 @@ public class PlaceJobBoImpl implements PlaceJobBO {
                     JobDetail jobDetail = new JobDetail(list.getItemId(), list.getItemCount(), list.getModel(), list.getJobId(), list.getSpareCount());
                     jobDetails.add(jobDetail);
                 }
+                System.out.println(jobDetails);
                 boolean isQtyUpdated = itemDAO.update(jobDetails);
                 System.out.println("2 "+ isQtyUpdated);
                 if (isQtyUpdated) {

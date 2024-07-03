@@ -82,7 +82,7 @@ public class ItemDaoImpl implements ItemDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("UPDATE item SET Item_count = Item_count - ? WHERE item_No = ?", itemId, itemCount);
+        return SQLUtil.execute("UPDATE item SET Item_count = Item_count - ? WHERE item_No = ?", itemCount, itemId);
     }
 
     @Override

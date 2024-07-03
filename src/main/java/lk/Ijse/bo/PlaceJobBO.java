@@ -30,4 +30,6 @@ public interface PlaceJobBO extends SuperBO{
     public boolean save(JobDetailDTO list) throws SQLException, ClassNotFoundException;
 
     public boolean placeOrder(PlaceJobDTO placeJobDTO) throws SQLException;
+
+    public List<String> getJobId() throws SQLException, ClassNotFoundException;;
 }

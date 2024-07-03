@@ -64,7 +64,7 @@ public class PaymentFormController {
     public void initialize(){
         setCellValueFactory();
         loadAllPayments();
-        getCurrentCustomerId();
+        getCurrentPaymentId();
         getJobId();
     }
 
@@ -78,13 +78,13 @@ public class PaymentFormController {
             double employeeTotalCost = paymentBO.getTotalEmployeeCost(jobId);
             double spareTotalCost = paymentBO.getTotalSpareCost(jobId);
 
-            System.out.println(defectTotalCost);
+            //System.out.println(defectTotalCost);
 
             double total = (defectTotalCost + employeeTotalCost + spareTotalCost);
 
-            System.out.println(total);
+            //System.out.println(total);
 
-            ObservableList<PaymentDTO> obList = FXCollections.observableArrayList();
+            //ObservableList<PaymentDTO> obList = FXCollections.observableArrayList();
 
             PaymentDTO payment = new PaymentDTO(paymentId, jobId, defectTotalCost, employeeTotalCost, spareTotalCost, total);
 
@@ -109,6 +109,7 @@ public class PaymentFormController {
 
         try {
             List<String> idList = paymentBO.getPaymentId();
+            System.out.println(idList);
 
             for (String code : idList) {
                 obList.add(code);
@@ -134,7 +135,7 @@ public class PaymentFormController {
         }
     }
 
-    private void getCurrentCustomerId() {
+    private void getCurrentPaymentId() {
         try {
             String nextPaymentId = paymentBO.generateNextPaymentId();
             lblPaymentId.setText(nextPaymentId);

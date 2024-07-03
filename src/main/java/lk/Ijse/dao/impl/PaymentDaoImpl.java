@@ -109,7 +109,13 @@ public class PaymentDaoImpl implements PaymentDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("INSERT INTO payment VALUES(?, ?, ?, ?, ?, ?)", payment);
+        return SQLUtil.execute("INSERT INTO payment VALUES(?, ?, ?, ?, ?, ?)",
+                payment.getPaymentId(),
+                payment.getJobId(),
+                payment.getDefectTotal(),
+                payment.getEmpTotal(),
+                payment.getSpareTotal(),
+                payment.getTotalCost());
     }
 
     @Override

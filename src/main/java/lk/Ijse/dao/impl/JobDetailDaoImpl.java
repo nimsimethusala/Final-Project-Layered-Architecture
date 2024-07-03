@@ -34,7 +34,11 @@ public class JobDetailDaoImpl implements JobDetailDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("INSERT INTO job_details VALUES(?, ?, ?)", list);
+        return SQLUtil.execute("INSERT INTO job_details VALUES(?, ?, ?)",
+                list.getItemId(),
+                list.getModel(),
+                list.getJobId()
+        );
     }
 
     @Override

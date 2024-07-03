@@ -146,7 +146,7 @@ public class SpareDaoImpl implements SpareDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("UPDATE spare SET count = count - ? WHERE Spare_id = ?", spareId, spareCount);
+        return SQLUtil.execute("UPDATE spare SET count = count - ? WHERE Spare_id = ?", spareCount, spareId);
     }
 
     @Override

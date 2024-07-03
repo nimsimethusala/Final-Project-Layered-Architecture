@@ -32,7 +32,20 @@ public class JobDaoImpl implements JobDAO {
 
         return pstm.executeUpdate() > 0;*/
 
-        return SQLUtil.execute("INSERT INTO job VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", job);
+        return SQLUtil.execute("INSERT INTO job VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                job.getJobId(),
+                job.getModel(),
+                job.getDate(),
+                job.getCustomerId(),
+                job.getItemCount(),
+                job.getDefectId(),
+                job.getDefectName(),
+                job.getSpareId(),
+                job.getSpareName(),
+                job.getSpareCount(),
+                job.getEmpId(),
+                job.getEmpName()
+        );
     }
 
     @Override
