@@ -3,12 +3,9 @@ package lk.Ijse.bo.impl;
 import lk.Ijse.bo.CustomerBO;
 import lk.Ijse.dao.CustomerDAO;
 import lk.Ijse.dao.DAOFactory;
-import lk.Ijse.dao.SQLUtil;
-import lk.Ijse.dao.impl.CustomerDaoImpl;
 import lk.Ijse.dto.CustomerDTO;
 import lk.Ijse.entity.Customer;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;

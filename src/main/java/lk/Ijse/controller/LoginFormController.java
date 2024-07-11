@@ -11,8 +11,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
 import lk.Ijse.bo.LoginBO;
 import lk.Ijse.bo.impl.LoginBoImpl;
+import lk.Ijse.dao.DAOFactory;
 import lk.Ijse.dao.SQLUtil;
 
 import java.io.IOException;
@@ -43,7 +45,14 @@ public class LoginFormController {
     }
 
     public void checkCredential(String password, String username) {
-        boolean b =
+        LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
+
+        boolean b = loginBO.checkCredential(password, username);
+        if (b){
+            loginDashboard();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Sorry! Password is incorrect!").show();
+        }
     }
 
     public void loginDashboard() {
