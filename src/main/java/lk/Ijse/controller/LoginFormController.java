@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.dao.SQLUtil;
 import lk.Ijse.db.DbConnection;
 
 import java.io.IOException;
@@ -43,13 +44,13 @@ public class LoginFormController {
     }
 
     private void checkCredential(String password, String username) {
-        String sql = "SELECT username, password from credential where username = ?";
+        //String sql = "SELECT username, password from credential where username = ?";
 
         try {
-            Connection connection = DbConnection.getInstance().getConnection();
+            /*Connection connection = DbConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement(sql);
-            pstm.setObject(1, username);
-            ResultSet resultSet = pstm.executeQuery();
+            pstm.setObject(1, username);*/
+            ResultSet resultSet = SQLUtil.execute("SELECT username, password from credential where username = ?", username);
 
             if (resultSet.next()){
                 String pw = resultSet.getString("password");
@@ -63,7 +64,7 @@ public class LoginFormController {
                 new Alert(Alert.AlertType.ERROR,"Sorry! Your Username is incorrect").show();
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
