@@ -10,6 +10,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.Ijse.bo.BOFactory;
+import lk.Ijse.bo.LoginBO;
 import lk.Ijse.dao.SQLUtil;
 
 import java.io.IOException;
@@ -28,6 +30,8 @@ public class PasswordFormController {
 
     @FXML
     private TextField txtNewPassword;
+
+    LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
 
     public void initialize(){
         txtNewPassword.setOnKeyPressed(event -> {
@@ -66,7 +70,9 @@ public class PasswordFormController {
         //String sql = "UPDATE credential SET password = ? WHERE username = 'nimsi'";
 
         try {
-            if (npw.equals(cpw)){
+            boolean update = loginBO.update(cpw, npw);
+
+            if (update){
                 /*Connection connection = DbConnection.getInstance().getConnection();
                 PreparedStatement pstm = connection.prepareStatement(sql);
                 pstm.setObject(1, cpw);

@@ -36,6 +36,8 @@ public class LoginFormController {
     @FXML
     private TextField txtUserId;
 
+    LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
+
     @FXML
     void btnLoginOnAction(ActionEvent event) {
         String password = txtPassword.getText();
@@ -45,8 +47,6 @@ public class LoginFormController {
     }
 
     public void checkCredential(String password, String username) {
-        LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
-
         boolean b = loginBO.checkCredential(password, username);
         if (b){
             loginDashboard();

@@ -34,4 +34,24 @@ public class LoginDaoImpl implements LoginDAO {
         }
         return false;
     }
+
+    public boolean update(String cpw, String npw) {
+        //String sql = "UPDATE credential SET password = ? WHERE username = 'nimsi'";
+
+        try {
+            if (npw.equals(cpw)){
+                /*Connection connection = DbConnection.getInstance().getConnection();
+                PreparedStatement pstm = connection.prepareStatement(sql);
+                pstm.setObject(1, cpw);
+
+                return pstm.executeUpdate() > 0;*/
+                return SQLUtil.execute("UPDATE credential SET password = ? WHERE username = 'nimsi'", cpw);
+            }
+
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return false;
+    }
 }

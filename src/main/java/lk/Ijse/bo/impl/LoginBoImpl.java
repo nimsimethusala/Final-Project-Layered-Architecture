@@ -9,4 +9,8 @@ public class LoginBoImpl implements LoginBO {
     public boolean checkCredential(String password, String username) {
         return loginDAO.checkCredential(password, username);
     }
+
+    public boolean update(String cpw, String npw){
+        return loginDAO.update(cpw, npw);
+    }
 }
