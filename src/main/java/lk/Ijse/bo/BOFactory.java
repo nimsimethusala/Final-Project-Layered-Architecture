@@ -12,7 +12,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        CUSTOMER,DEFECT,EMPLOYEE,ITEM,JOB,PLACE_JOB,PAYMENT,SPARE,SUPPLIER
+        CUSTOMER,DEFECT,EMPLOYEE,ITEM,JOB,PLACE_JOB,PAYMENT,SPARE,SUPPLIER,USER
     }
 
     //Object creation logic for BO objects
@@ -34,6 +34,8 @@ public class BOFactory {
                 return new SpareBoImpl();
             case SUPPLIER:
                 return new SupplierBoImpl();
+            case USER:
+                return new LoginBoImpl();
             default:
                 return null;
         }

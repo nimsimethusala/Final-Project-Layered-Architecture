@@ -11,11 +11,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.Ijse.dao.SQLUtil;
-import lk.Ijse.db.DbConnection;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class PasswordFormController {
@@ -65,7 +62,7 @@ public class PasswordFormController {
         }
     }
 
-    private boolean update(String cpw, String npw) {
+    public boolean update(String cpw, String npw) {
         //String sql = "UPDATE credential SET password = ? WHERE username = 'nimsi'";
 
         try {
